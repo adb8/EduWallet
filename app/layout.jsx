@@ -1,22 +1,27 @@
 import Nav from "@components/Nav";
 import "@styles/globals.css";
 import Provider from "@components/Provider";
-
+import { Roboto } from 'next/font/google'
+ 
+const roboto = Roboto({
+  weight: '400',
+  subsets: ['latin'],
+})
 export const metadata = {
-	title: "EduWallet",
+  title: "EduWallet",
 };
 
 const RootLayout = ({ children }) => {
-	return (
-		<html lang="en">
-			<body>
-				<Provider>
-					<Nav />
-					{children}
-				</Provider>
-			</body>
-		</html>
-	);
+  return (
+    <html lang="en">
+      <body className={roboto.className}>
+        <Provider>
+          <Nav />
+          {children}
+        </Provider>
+      </body>
+    </html>
+  );
 };
 
 export default RootLayout;
