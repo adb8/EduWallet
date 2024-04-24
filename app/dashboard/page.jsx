@@ -95,7 +95,7 @@ const Dashboard = () => {
     </div>
   ) : (
     <div className="bg-blue-50">
-      <div className="flex justify-center items-center mx-auto bg-white max-w-[700px] h-[175px] mt-12 mb-8 shadow-md">
+      <div className="flex justify-center items-center mx-auto bg-white max-w-[700px] h-[175px] mt-12 mb-8 shadow-sm">
         <div className="mx-4">
           <img src={session?.user.image} alt="Profile picture" className="rounded-full w-14" />
         </div>
@@ -144,7 +144,7 @@ const Dashboard = () => {
 
 const DashBoardCard = ({ type, title, history, getEarningsExpenses }) => {
   return (
-    <div className="h-[340px] w-[320px] bg-white shadow-md p-5 mx-auto">
+    <div className="h-[340px] w-[320px] bg-white shadow-sm p-5 mx-auto">
       <p className="text-center font-semibold">{title}</p>
       <div className="w-[280px] h-[280px]">
         {history &&

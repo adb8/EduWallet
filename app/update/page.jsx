@@ -86,7 +86,7 @@ const UpdateBalance = () => {
     </div>
   ) : (
     <div className="grid place-items-center w-full bg-blue-50 my-14">
-      <div className={`flex flex-col w-[450px] shadow-md bg-white p-6 ${formSize}`}>
+      <div className={`flex flex-col w-[450px] shadow-sm bg-white p-6 ${formSize}`}>
         <div className="text-lg font-semibold mx-auto mb-1">Update Your Balance</div>
         <div className="my-2">
           <label>Select type</label>

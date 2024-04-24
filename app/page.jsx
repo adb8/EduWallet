@@ -93,10 +93,10 @@ const FrontPage = () => {
 
 const FrontPageCard = ({ img, description, title }) => {
   return (
-    <div className="w-[280px] h-[300px] p-5 text-center bg-white shadow-md flex flex-col justify-center items-center mx-auto">
+    <div className="w-[280px] h-[300px] p-8 text-center bg-white shadow-sm flex flex-col justify-center items-center mx-auto">
       <Image src={img} width={60} height={60} className="mx-auto my-5" />
-      <p className="text-xl font-semibold mx-auto mb-3">{title}</p>
-      <p className="mx-auto text-lg">{description}</p>
+      <p className="text-lg font-semibold mx-auto mb-3">{title}</p>
+      <p className="mx-auto text-md">{description}</p>
     </div>
   );
 };
