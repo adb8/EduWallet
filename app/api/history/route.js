@@ -3,7 +3,6 @@ import Entry from "@models/entry";
 
 export const POST = async (req, res) => {
 	const { userId } = await req.json();
-
 	try {
 		await db_connect();
 		const history = await Entry.find({ creator: userId })

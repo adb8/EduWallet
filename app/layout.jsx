@@ -14,7 +14,7 @@ export const metadata = {
 const RootLayout = ({ children }) => {
   return (
     <html lang="en">
-      <body className={roboto.className}>
+      <body className={roboto.className + " bg-blue-50"}>
         <Provider>
           <Nav />
           {children}

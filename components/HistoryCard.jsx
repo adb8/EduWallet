@@ -1,15 +1,15 @@
 import React from "react";
 
 const HistoryCard = ({ date, type, category, amount, description }) => {
-	return (
-		<tr className="history-card">
-			<td className="date-cont">{date}</td>
-			<td className="type-cont">{type}</td>
-			<td className="cat-cont">{category}</td>
-			<td className="amt-cont">{amount}</td>
-			<td className="descr-cont">{description}</td>
-		</tr>
-	);
+  return (
+    <tr>
+      <td>{date}</td>
+      <td>{type}</td>
+      <td>{category}</td>
+      <td>{amount}</td>
+      <td>{description}</td>
+    </tr>
+  );
 };
 
 export default HistoryCard;
