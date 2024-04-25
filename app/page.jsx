@@ -24,7 +24,7 @@ const FrontPage = () => {
   );
 
   return status === "loading" ? (
-    <div className="w-full flex justify-center items-center">
+    <div className="absolute top-1/2 left-1/2">
       <FadeLoader color="#000000" loading={true} size={50} />
     </div>
   ) : (
@@ -48,7 +48,7 @@ const FrontPage = () => {
               "stipends",
               "grants",
               "room and board costs",
-              "financial aid packages"
+              "financial aid packages",
             ]}
             typeSpeed={40}
             backSpeed={50}

@@ -13,7 +13,7 @@ const Nav = () => {
   return status === "loading" ? (
     <div className="h-[50px]"></div>
   ) : status === "authenticated" ? (
-    <div className="w-full h-[50px] bg-white">
+    <div className="w-full h-[50px] bg-white overflow-auto">
       <div className="flex flex-row justify-between items-center max-w-[500px] mx-auto">
         <Link href="/dashboard" className="h-[50px] text-md flex items-center hover:bg-gray-100 transition duration-300 ease-in-out px-4">
           Dashboard
@@ -30,7 +30,7 @@ const Nav = () => {
       </div>
     </div>
   ) : (
-    <div className="w-full h-[50px] bg-white">
+    <div className="w-full h-[50px] bg-white overflow-auto">
       <div className="flex flex-row justify-around items-center max-w-[400px] mx-auto">
         <Link href="/update" className="h-[50px] text-md flex items-center hover:bg-gray-100 transition duration-300 ease-in-out px-4">
           About

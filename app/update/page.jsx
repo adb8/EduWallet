@@ -81,7 +81,7 @@ const UpdateBalance = () => {
   };
 
   return status === "loading" ? (
-    <div className="w-full flex justify-center items-center">
+    <div className="absolute top-1/2 left-1/2">
       <FadeLoader color="#000000" loading={true} size={50} />
     </div>
   ) : (
@@ -112,9 +112,7 @@ const UpdateBalance = () => {
             <Radio name="category" value="Supplies" callback={handleRadioCategory} />
             <Radio name="category" value="Other" callback={handleRadioCategory} />
           </div>
-        ) : (
-          null
-        )}
+        ) : null}
         {other ? (
           <input
             className="outline-none border-none h-[40px] p-2 px-4 bg-blue-50 rounded-sm mt-2"
@@ -159,7 +157,10 @@ const UpdateBalance = () => {
             max={new Date().toISOString().split("T")[0]}
           />
         </div>
-        <button type="button" className="text-center text-md rounded-full bg-blue-200 hover:bg-blue-300 transiton duration-300 ease-in-out shadow-md w-[180px] h-[40px] mt-4 mx-auto" onClick={handleSubmit}>
+        <button
+          type="button"
+          className="text-center text-md rounded-full bg-blue-200 hover:bg-blue-300 transiton duration-300 ease-in-out shadow-md w-[180px] h-[40px] mt-4 mx-auto"
+          onClick={handleSubmit}>
           Update Balance
         </button>
       </div>

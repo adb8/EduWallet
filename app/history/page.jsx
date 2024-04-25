@@ -60,12 +60,12 @@ const History = () => {
   };
 
   return status == "loading" ? (
-    <div className="w-full flex justify-center items-center">
+    <div className="absolute top-1/2 left-1/2">
       <FadeLoader color="#000000" loading={true} size={50} />
     </div>
   ) : status == "authenticated" ? (
     <div className="w-full bg-blue-50 my-10">
-      <div className="history-cont w-[1000px] h-[700px] mx-auto flex flex-col shadow-sm bg-white py-3">
+      <div className="history-cont max-w-[1000px] h-[700px] mx-auto flex flex-col shadow-sm bg-white py-3">
         <div className="flex justify-center items-center">
           <Image
             src={"/previous.png"}
@@ -91,7 +91,8 @@ const History = () => {
             }}
           />
         </div>
-        <table className="entries-cont">
+        <div className="w-full overflow-auto">
+        <table className="w-full">
           <tr>
             <th className="bg-blue-200">Date</th>
             <th className="bg-blue-200">Type</th>
@@ -101,7 +102,7 @@ const History = () => {
           </tr>
           {historyCurrent &&
             historyCurrent.map((entry) => {
-              const date = entry.date
+              const date = entry.date;
               const amount = `$${entry.amount}`;
               const decription =
                 entry.description.length > 40
@@ -124,6 +125,7 @@ const History = () => {
               );
             })}
         </table>
+        </div>
       </div>
     </div>
   ) : null;

@@ -27,6 +27,10 @@ const Dashboard = () => {
   const router = useRouter();
   const [history, setHistory] = useState(null);
   const [balance, setBalance] = useState(null);
+  const [historyLoading, setHistoryLoading] = useState(true);
+  const [balanceLoading, setBalanceLoading] = useState(true);
+  const [profilePicture, setProfilePicture] = useState(null);
+  const [username, setUsername] = useState(null);
 
   useEffect(() => {
     const getHistory = async () => {
@@ -39,6 +43,7 @@ const Dashboard = () => {
         });
         const history = await response.json();
         setHistory(history);
+        setHistoryLoading(false);
         findBalance(history);
       } catch (error) {
         console.error(error);
@@ -46,6 +51,10 @@ const Dashboard = () => {
     };
     if (status === "authenticated") {
       getHistory();
+      const profilePicture = session?.user?.image;
+      setProfilePicture(profilePicture);
+      const username = session?.user?.name;
+      setUsername(username);
     } else if (status === "unauthenticated") {
       router.push("/");
     }
@@ -68,6 +77,7 @@ const Dashboard = () => {
       balanceStr = "$" + balanceStr;
     }
     setBalance(balanceStr);
+    setBalanceLoading(false);
   };
 
   const getEarningsExpenses = (type) => {
@@ -89,21 +99,28 @@ const Dashboard = () => {
     }
   };
 
-  return status === "loading" ? (
-    <div className="w-full flex justify-center items-center">
+  return status === "loading" ||
+    !username ||
+    !profilePicture ||
+    balanceLoading ||
+    historyLoading ? (
+    <div className="absolute top-1/2 left-1/2">
       <FadeLoader color="#000000" loading={true} size={50} />
     </div>
   ) : (
     <div className="bg-blue-50">
-      <div className="flex justify-center items-center mx-auto bg-white max-w-[700px] h-[175px] mt-12 mb-8 shadow-sm">
+      <div className="flex flex-col lg:flex-row justify-center items-center mx-auto bg-white w-[320px] lg:w-[700px] p-10 mt-12 mb-8 shadow-sm">
         <div className="mx-4">
-          <img src={session?.user.image} alt="Profile picture" className="rounded-full w-14" />
+          <img src={session?.user?.image} alt="Profile picture" className="rounded-full w-14" />
         </div>
         <div className="mx-6">
           <div className="font-bold text-4xl overflow-hidden whitespace-nowrap my-2">
-            Hi, {session?.user.name.length > 10 ? session?.user.name.slice(0, 10) + "..." : session?.user.name}
+            Hi,{" "}
+            {session?.user.name.length > 10
+              ? session?.user.name.slice(0, 10) + "..."
+              : session?.user.name}
           </div>
-          <div className="text-lg my-2">{balance && `Balance: ${balance}`}</div>
+          <div className="text-lg my-2 text-center lg:text-left">{balance && `Balance: ${balance}`}</div>
         </div>
         <div className="flex flex-col items-center mx-6">
           <Link
@@ -144,7 +161,7 @@ const Dashboard = () => {
 
 const DashBoardCard = ({ type, title, history, getEarningsExpenses }) => {
   return (
-    <div className="h-[340px] w-[320px] bg-white shadow-sm p-5 mx-auto">
+    <div className="h-[340px] w-[320px] bg-white shadow-sm p-5 mb-10 lg:mb-0 mx-auto">
       <p className="text-center font-semibold">{title}</p>
       <div className="w-[280px] h-[280px]">
         {history &&
