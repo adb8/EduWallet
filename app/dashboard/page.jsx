@@ -120,7 +120,9 @@ const Dashboard = () => {
               ? session?.user.name.slice(0, 10) + "..."
               : session?.user.name}
           </div>
-          <div className="text-lg my-2 text-center lg:text-left">{balance && `Balance: ${balance}`}</div>
+          <div className="text-lg my-2 text-center lg:text-left">
+            {balance && `Balance: ${balance}`}
+          </div>
         </div>
         <div className="flex flex-col items-center mx-6">
           <Link
@@ -176,7 +178,9 @@ const DashBoardCard = ({ type, title, history, getEarningsExpenses }) => {
         {history && history.length === 0 && (
           <article className="h-full text-center flex items-center justify-center">
             No data to display. <br />
-            Update your balance above.
+            Update your balance using the
+            <br />
+            Update Balance button above.
           </article>
         )}
         {!history && (
