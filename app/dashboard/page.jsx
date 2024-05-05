@@ -99,10 +99,15 @@ const Dashboard = () => {
     });
     if (count === 0) {
       return (
-        <article className="no-data">
-          No {type === "expense" ? "expenses" : "earnings"} to display. <br />
-          Update your balance above.
-        </article>
+        <div className="h-[250px] text-center flex flex-col items-center justify-center px-10">
+          <p className="font-semibold mb-1">
+            No {type === "expense" ? "expenses" : "earnings"} to display
+          </p>
+          <p>
+            Create an {type === "expense" ? "expense" : "earnings"} entry using the{" "}
+            <span>Update Balance</span> button above
+          </p>
+        </div>
       );
     } else {
       return <Pie options={pieOptions} data={getPieData(history, type)} />;

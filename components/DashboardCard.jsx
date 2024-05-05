@@ -47,7 +47,7 @@ const DashboardCard = ({ type, title, history, getEarningsExpenses }) => {
           <div className="h-[250px] text-center flex flex-col items-center justify-center px-10">
             <p className="font-semibold mb-1">No data to display</p>
             <p>
-              Create an entry using the <span>Update Balance</span> button above
+              Create an entry using the{" "}<span>Update Balance</span> button above
             </p>
           </div>
         )}
