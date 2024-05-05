@@ -99,7 +99,7 @@ const Dashboard = () => {
     });
     if (count === 0) {
       return (
-        <div className="h-[250px] text-center flex flex-col items-center justify-center px-10">
+        <div className="h-[270px] text-center flex flex-col items-center justify-center px-10">
           <p className="font-semibold mb-1">
             No {type === "expense" ? "expenses" : "earnings"} to display
           </p>
