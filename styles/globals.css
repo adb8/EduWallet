@@ -26,6 +26,11 @@
     U+FFFD;
 }
 
+.overlay {
+  background: linear-gradient(to right, rgba(239, 246, 255, 1), transparent);
+  z-index: 1;
+}
+
 table {
   border-collapse: collapse;
   font-size: 0.9em;
@@ -35,10 +40,6 @@ table {
 table td,
 table th {
   padding: 10px 10px;
-}
-
-table th {
-  border-bottom: thin solid #9ebae2;
 }
 
 table tr {

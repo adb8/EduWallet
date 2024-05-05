@@ -13,29 +13,43 @@ const Nav = () => {
   return status === "loading" ? (
     <div className="h-[50px]"></div>
   ) : status === "authenticated" ? (
-    <div className="w-full h-[50px] bg-white overflow-auto">
-      <div className="flex flex-row justify-between items-center max-w-[500px] mx-auto">
-        <Link href="/dashboard" className="h-[50px] text-md flex items-center hover:bg-gray-100 transition duration-300 ease-in-out px-4">
+    <div className="w-full h-[50px] flex bg-white">
+      <div className="flex flex-row justify-center items-center mx-auto font-medium">
+        <Link
+          href="/dashboard"
+          className="h-[50px] text-ms flex items-center hover:bg-gray-100 transition duration-300 ease-in-out px-5">
           Dashboard
         </Link>
-        <Link href="/history" className="h-[50px] text-md flex items-center hover:bg-gray-100 transition duration-300 ease-in-out px-4">
+        <Link
+          href="/history"
+          className="h-[50px] text-md flex items-center hover:bg-gray-100 transition duration-300 ease-in-out px-5">
           History
         </Link>
-        <Link href="/update" className="h-[50px] text-md flex items-center hover:bg-gray-100 transition duration-300 ease-in-out px-4">
+        <Link
+          href="/update"
+          className="h-[50px] text-md flex items-center hover:bg-gray-100 transition duration-300 ease-in-out px-5">
           Update
         </Link>
-        <Link href={""} onClick={signOut} className="h-[50px] text-md flex items-center hover:bg-gray-100 transition duration-300 ease-in-out px-4">
-          Sign out
+        <Link
+          href={""}
+          onClick={signOut}
+          className="h-[50px] text-md flex items-center hover:bg-gray-100 transition duration-300 ease-in-out px-5">
+          Logout
         </Link>
+        <img src={session.user.image} className="h-[24px] w-[24px] rounded-full mx-5" />
       </div>
     </div>
   ) : (
-    <div className="w-full h-[50px] bg-white overflow-auto">
-      <div className="flex flex-row justify-around items-center max-w-[400px] mx-auto">
-        <Link href="/update" className="h-[50px] text-md flex items-center hover:bg-gray-100 transition duration-300 ease-in-out px-4">
+    <div className="w-full h-[50px] flex bg-white">
+      <div className="flex flex-row justify-center items-center mx-auto font-medium">
+        <Link
+          href="/update"
+          className="h-[50px] text-md flex items-center hover:bg-gray-100 transition duration-300 ease-in-out px-5">
           About
         </Link>
-        <Link href="/update" className="h-[50px] text-md flex items-center hover:bg-gray-100 transition duration-300 ease-in-out px-4">
+        <Link
+          href="/update"
+          className="h-[50px] text-md flex items-center hover:bg-gray-100 transition duration-300 ease-in-out px-5">
           Analytics
         </Link>
         {providers &&
@@ -46,7 +60,7 @@ const Nav = () => {
               onClick={() => {
                 signIn(provider.id, { callbackUrl: "/dashboard" });
               }}
-              className="h-[50px] text-md flex items-center hover:bg-gray-100 transition duration-300 ease-in-out px-4">
+              className="h-[50px] text-md flex items-center hover:bg-gray-100 transition duration-300 ease-in-out px-5">
               Sign In
             </Link>
           ))}

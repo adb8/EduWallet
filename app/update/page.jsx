@@ -85,17 +85,17 @@ const UpdateBalance = () => {
       <FadeLoader color="#000000" loading={true} size={50} />
     </div>
   ) : (
-    <div className="grid place-items-center w-full bg-blue-50 my-14">
-      <div className={`flex flex-col w-[450px] shadow-sm bg-white p-6 ${formSize}`}>
-        <div className="text-lg font-semibold mx-auto mb-1">Update Your Balance</div>
-        <div className="my-2">
-          <label>Select type</label>
+    <div className="flex flex-col flex-grow items-center justify-center w-full bg-blue-50 my-14">
+      <div className={`flex flex-col w-[450px] rounded-xs bg-white px-6 ${formSize}`}>
+        <div className="text-lg font-medium mx-auto mb-1 mt-6">Update Your Balance</div>
+        <div className="my-3">
+          <label className="font-medium">Select type</label>
           <Radio name="type" value="Earnings" callback={handleRadioType} />
           <Radio name="type" value="Expense" callback={handleRadioType} />
         </div>
         {type === "Earnings" ? (
-          <div className="my-2">
-            <label>Select category</label>
+          <div className="my-3">
+            <label className="font-medium">Select category</label>
             <Radio name="category" value="Jobs" callback={handleRadioCategory} />
             <Radio name="category" value="Grants" callback={handleRadioCategory} />
             <Radio name="category" value="Stipends" callback={handleRadioCategory} />
@@ -105,8 +105,8 @@ const UpdateBalance = () => {
           <></>
         )}
         {type === "Expense" ? (
-          <div className="my-2">
-            <label>Select category</label>
+          <div className="my-3">
+            <label className="font-medium">Select category</label>
             <Radio name="category" value="Tuition" callback={handleRadioCategory} />
             <Radio name="category" value="Living" callback={handleRadioCategory} />
             <Radio name="category" value="Supplies" callback={handleRadioCategory} />
@@ -123,8 +123,8 @@ const UpdateBalance = () => {
         ) : (
           <></>
         )}
-        <div className="flex flex-col my-2">
-          <label>Enter amount</label>
+        <div className="flex flex-col my-3">
+          <label className="font-medium">Enter amount</label>
           <input
             type="number"
             className="outline-none border-none h-[40px] p-2 px-4 bg-blue-50 rounded-sm mt-1"
@@ -134,8 +134,8 @@ const UpdateBalance = () => {
             required
           />
         </div>
-        <div className="flex flex-col my-2">
-          <label>Enter description</label>
+        <div className="flex flex-col my-3">
+          <label className="font-medium">Enter description</label>
           <input
             type="text"
             className="outline-none border-none h-[40px] p-2 px-4 bg-blue-50 rounded-sm mt-1"
@@ -145,8 +145,8 @@ const UpdateBalance = () => {
             required
           />
         </div>
-        <div className="flex flex-col my-2">
-          <label>Select date</label>
+        <div className="flex flex-col my-3">
+          <label className="font-medium">Select date</label>
           <input
             type="date"
             className="outline-none border-none h-[40px] p-2 px-4 bg-blue-50 rounded-sm mt-1"
@@ -159,7 +159,7 @@ const UpdateBalance = () => {
         </div>
         <button
           type="button"
-          className="text-center text-md rounded-full bg-blue-200 hover:bg-blue-300 transiton duration-300 ease-in-out shadow-md w-[180px] h-[40px] mt-4 mx-auto"
+          className="shadow-sm text-md rounded-full w-[175px] bg-blue-200 hover:bg-blue-300 transition duration-300 ease-in-out h-[40px] flex items-center justify-center mt-3 mb-6 mx-auto"
           onClick={handleSubmit}>
           Update Balance
         </button>
