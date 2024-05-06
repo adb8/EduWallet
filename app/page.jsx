@@ -30,7 +30,7 @@ const FrontPage = () => {
           router.push("/dashboard");
         }
       : () => {},
-    [status]
+    [status, session]
   );
 
   return status === "loading" ? (
@@ -41,11 +41,11 @@ const FrontPage = () => {
     <div className="flex bg-blue-50 flex-col flex-grow relative">
       <div className="flex flex-col w-1/2 flex-grow justify-center items-center">
         <div className="ml-12">
-          <div className="text-5xl text-black font-bold leading-tight">
+          <div className="text-5xl font-bold leading-tight">
             Master your finances
             <br /> with <span className="text-blue-300">EduWallet.</span>
           </div>
-          <div className="text-xl text-black mt-10 font-medium">
+          <div className="text-xl mt-10 font-regular">
             All your{" "}
             <ReactTyped
               strings={TEXTS}
@@ -56,7 +56,7 @@ const FrontPage = () => {
             />{" "}
             in one place.
           </div>
-          <p className="text-black font-medium text-xl mt-6 mb-14">
+          <p className="font-regular text-xl mt-6 mb-14">
             Taking control of your finances as a student can <br />
             be difficult. EduWallet is here to help.
           </p>

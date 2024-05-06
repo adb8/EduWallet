@@ -30,8 +30,8 @@ const DashboardCard = ({ type, title, history, getEarningsExpenses }) => {
   return (
     <div
       className={`${
-        type === "balance" ? "col-span-3" : "col-span-1"
-      } bg-white w-full rounded-xs p-6`}>
+        type === "balance" ? "col-span-3 w-[1000px]" : "col-span-1 w-[318px]"
+      } bg-white rounded-xs p-6 h-[342px]`}>
       <p className="text-center font-semibold">{title}</p>
       <div>
         {history &&
@@ -47,7 +47,7 @@ const DashboardCard = ({ type, title, history, getEarningsExpenses }) => {
           <div className="h-[250px] text-center flex flex-col items-center justify-center px-10">
             <p className="font-semibold mb-1">No data to display</p>
             <p>
-              Create an entry using the{" "}<span>Update Balance</span> button above
+              Create an entry using the <span>Update Balance</span> button above
             </p>
           </div>
         )}

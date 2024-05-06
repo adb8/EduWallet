@@ -14,7 +14,7 @@ const Nav = () => {
     <div className="h-[50px]"></div>
   ) : status === "authenticated" ? (
     <div className="w-full h-[50px] flex bg-white">
-      <div className="flex flex-row justify-center items-center mx-auto font-medium">
+      <div className="flex flex-row justify-center items-center mx-auto font-regular">
         <Link
           href="/dashboard"
           className="h-[50px] text-ms flex items-center hover:bg-gray-100 transition duration-300 ease-in-out px-5">
@@ -41,7 +41,7 @@ const Nav = () => {
     </div>
   ) : (
     <div className="w-full h-[50px] flex bg-white">
-      <div className="flex flex-row justify-center items-center mx-auto font-medium">
+      <div className="flex flex-row justify-center items-center mx-auto font-regular">
         <Link
           href="/update"
           className="h-[50px] text-md flex items-center hover:bg-gray-100 transition duration-300 ease-in-out px-5">
