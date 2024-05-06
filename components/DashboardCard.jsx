@@ -30,8 +30,8 @@ const DashboardCard = ({ type, title, history, getEarningsExpenses }) => {
   return (
     <div
       className={`${
-        type === "balance" ? "col-span-3 w-[1000px]" : "col-span-1 w-[318px]"
-      } bg-white rounded-xs p-6 h-[342px]`}>
+        type === "balance" ? "col-span-3 w-[1000px] h-[388px]" : "col-span-1 w-[318px] h-[342px]"
+      } bg-white rounded-xs p-6 `}>
       <p className="text-center font-semibold">{title}</p>
       <div>
         {history &&
